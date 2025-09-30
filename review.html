@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Reviews - Supreme Shoe Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    #navbar {
+      background-color: #222;
+      overflow: hidden;
+    }
+
+    #navbar a {
+      float: left;
+      display: block;
+      color: #f4f4f4;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #navbar a:hover {
+      background-color: #575757;
+      color: #ffcc00;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 3px 3px 15px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffcc00;
+      margin-bottom: 30px;
+    }
+
+    .review-card {
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #fafafa;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .review-card h3 {
+      margin: 0;
+      color: #222;
+    }
+
+    .review-card .date {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .review-card .stars {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    .review-card p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    form {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea, select {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    button {
+      background-color: #ffcc00;
+      border: none;
+      padding: 14px;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #e6b800;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div id="navbar">
+    <a href="store.html">Home</a>
+	<a href="aboutus.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="review.html">Reviews</a>
+  </div>
+
+  <div class="container">
+    <h1>Customer Reviews</h1>
+
+    <!-- Reviews Section -->
+    <div id="reviews-list">
+      <!-- Sample review -->
+      <div class="review-card">
+        <h3>Jane Doe</h3>
+        <div class="date">Sept 29, 2025</div>
+        <div class="stars">★★★★★</div>
+        <p>Absolutely love these shoes! Very comfortable and stylish. I’ll be buying another pair soon.</p>
+      </div>
+
+      <div class="review-card">
+        <h3>John Smith</h3>
+        <div class="date">Sept 28, 2025</div>
+        <div class="stars">★★★★☆</div>
+        <p>Great shoes, but delivery took a little longer than expected. Quality is excellent though!</p>
+      </div>
+    </div>
+
+    <!-- Add Review Form -->
+    <h2>Submit Your Review</h2>
+    <form id="review-form" onsubmit="addReview(event)">
+      <input type="text" id="reviewer-name" placeholder="Your Name" required>
+      <select id="review-rating" required>
+        <option value="" disabled selected>Rating</option>
+        <option value="★★★★★">5 Stars</option>
+        <option value="★★★★☆">4 Stars</option>
+        <option value="★★★☆☆">3 Stars</option>
+        <option value="★★☆☆☆">2 Stars</option>
+        <option value="★☆☆☆☆">1 Star</option>
+      </select>
+      <textarea id="review-text" placeholder="Write your review..." required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
+
+  <script>
+    function addReview(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('reviewer-name').value;
+      const rating = document.getElementById('review-rating').value;
+      const text = document.getElementById('review-text').value;
+
+      const reviewDiv = document.createElement('div');
+      reviewDiv.className = 'review-card';
+      reviewDiv.innerHTML = `
+        <h3>${name}</h3>
+        <div class="date">${new Date().toLocaleDateString()}</div>
+        <div class="stars">${rating}</div>
+        <p>${text}</p>
+      `;
+
+      document.getElementById('reviews-list').prepend(reviewDiv);
+
+      // Reset form
+      document.getElementById('review-form').reset();
+    }
+  </script>
+
+</body>
+</html>

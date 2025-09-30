@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Zenvy Shoe Store</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Navbar */
+    #navbar {
+      background-color: #222;
+      overflow: hidden;
+    }
+
+    #navbar a {
+      float: left;
+      display: block;
+      color: #f4f4f4;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #navbar a:hover {
+      background-color: #575757;
+      color: #ffcc00;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 50px;
+      background-color: #333;
+      color: #ffcc00;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 48px;
+    }
+
+    header p {
+      font-size: 20px;
+    }
+
+    /* Product grid */
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+    }
+
+    .product {
+      background-color: white;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      margin: 10px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .product h2 {
+      font-size: 22px;
+      margin: 10px 0;
+    }
+
+    .product p {
+      margin: 5px 0;
+      font-size: 18px;
+      color: black;
+    }
+
+    .product button {
+      background-color: #ffcc00;
+      color: #222;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .product button:hover {
+      background-color: #e6b800;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      color: #f4f4f4;
+      margin-top: 20px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div id="navbar">
+    <a href="store.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contact.html">Contact</a>
+	<a href="review.html">Reviews</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h1>Zenvy Shoe Store</h1>
+    <p>Step into style – Find your perfect pair today! 100% Real</p>
+  </header>
+
+
+  <div class="products">
+
+    <div class="product">
+      <img src="airforce1.jpg" alt="Nike Air Force 1">
+      <h2>Air Force 1 </h2>
+      <p>$80</p>
+      <button> <a href="cart.html">Buy Now</a></button>
+    </div>
+	
+    <div class="product">
+      <img src="dunks.jpg"  alt="Classic Flex">
+      <h2>Nike Dunks Low </h2>
+      <p>$120</p>
+     <button> <a href="cart2.html">Buy Now</a></button>
+    </div>
+	
+	 <div class="product">
+      <img src="dunkshigh.jpg"  alt="Classic Flex">
+      <h2>Nike Dunks High </h2>
+      <p>$130</p>
+      <button> <a href="cart3.html">Buy Now</a></button>
+    </div>
+	
+    <div class="product">
+      <img src="jordan.jpg"  alt="Street King">
+      <h2>Air Jordan Force</h2>
+      <p>$300</P>
+     <button> <a href="cart4.html">Buy Now</a></button>
+    </div>
+
+
+
+   
+  </div>
+
+  <footer>
+    &copy; 2025 Zenvy Shoe Store | Designed by Tahmid
+  </footer>
+
+</body>
+</html>
